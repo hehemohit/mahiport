@@ -1,0 +1,116 @@
+{
+  "theme": "light",
+  "archetype": "5 (Luxury / Premium Consulting)",
+  "vibe": "Minimal, elegant, analytical, storytelling",
+  "colors": {
+    "light": {
+      "background": "#F8F5F0",
+      "surface": "#E8DDD0",
+      "surface_glass": "rgba(232, 221, 208, 0.7)",
+      "primary": "#111111",
+      "secondary": "#4A3F35",
+      "accent": "#4A3F35",
+      "border": "rgba(74, 63, 53, 0.15)",
+      "particles": "#4A3F35"
+    },
+    "dark": {
+      "background": "#111111",
+      "surface": "#1A1714",
+      "surface_glass": "rgba(26, 23, 20, 0.7)",
+      "primary": "#F8F5F0",
+      "secondary": "#E8DDD0",
+      "accent": "#E8DDD0",
+      "border": "rgba(232, 221, 208, 0.15)",
+      "particles": "#E8DDD0"
+    }
+  },
+  "typography": {
+    "headings": {
+      "fontFamily": "Cabinet Grotesk, sans-serif",
+      "weights": [300, 500, 800],
+      "style": "tracking-tighter",
+      "description": "Used for all H1, H2, H3. Adds a modern, authoritative AI/consulting feel."
+    },
+    "body": {
+      "fontFamily": "IBM Plex Sans, sans-serif",
+      "weights": [400, 500],
+      "style": "leading-relaxed",
+      "description": "Clean, highly readable, adds a data-science/analytical tone."
+    },
+    "mono": {
+      "fontFamily": "JetBrains Mono, monospace",
+      "description": "Used for tech stack badges, numbers, and stats counters."
+    }
+  },
+  "spacing_and_layout": {
+    "section": "py-24 md:py-32",
+    "container": "px-6 md:px-12 max-w-7xl mx-auto",
+    "grid_strategy": "bento",
+    "hero_composition": "Split layout. 60% text/CTAs on left, 40% professional headshot on right. Particle background spans the entire hero container behind both.",
+    "projects_grid": "Asymmetric bento grid (grid-cols-1 md:grid-cols-12 gap-8). Project 1: col-span-12 md:col-span-8, Project 2: col-span-12 md:col-span-4, etc."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#111111] text-[#F8F5F0] dark:bg-[#F8F5F0] dark:text-[#111111] hover:scale-105 transition-transform duration-300 rounded-none px-8 py-4 font-medium",
+      "secondary": "border border-[#4A3F35] text-[#111111] dark:border-[#E8DDD0] dark:text-[#F8F5F0] hover:bg-[#4A3F35] hover:text-[#F8F5F0] dark:hover:bg-[#E8DDD0] dark:hover:text-[#111111] transition-all duration-300 rounded-none px-8 py-4 font-medium"
+    },
+    "cards": {
+      "style": "bg-[#E8DDD0] dark:bg-[#1A1714] border border-[#4A3F35]/15 dark:border-[#E8DDD0]/15 rounded-sm p-8 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300",
+      "glass": "backdrop-blur-xl bg-[#E8DDD0]/70 dark:bg-[#1A1714]/70 border border-[#4A3F35]/15 dark:border-[#E8DDD0]/15 rounded-sm"
+    },
+    "badges": {
+      "tech_stack": "inline-flex items-center px-3 py-1 rounded-full border border-[#4A3F35]/20 dark:border-[#E8DDD0]/20 text-xs font-mono text-[#4A3F35] dark:text-[#E8DDD0] bg-transparent hover:bg-[#4A3F35]/10 dark:hover:bg-[#E8DDD0]/10 transition-colors"
+    },
+    "timeline": {
+      "line": "absolute left-0 top-0 bottom-0 w-px bg-[#4A3F35]/20 dark:bg-[#E8DDD0]/20",
+      "dot": "absolute left-[-4px] top-1 w-2 h-2 rounded-full bg-[#4A3F35] dark:bg-[#E8DDD0]",
+      "content": "pl-8 pb-12 relative"
+    },
+    "navigation": {
+      "style": "fixed top-0 w-full z-50 backdrop-blur-xl bg-[#F8F5F0]/80 dark:bg-[#111111]/80 border-b border-[#4A3F35]/10 dark:border-[#E8DDD0]/10 transition-colors duration-300"
+    }
+  },
+  "motion_and_interactions": {
+    "scroll_reveal": "Use framer-motion. Initial: opacity-0, y-10. WhileInView: opacity-100, y-0. Transition: duration 0.6s, ease-out.",
+    "hover_states": "Images inside project cards scale up slightly (scale-105) on card hover. Badges shift up by 2px on hover.",
+    "loading_animation": "Minimalistic loader. Number counter counting from 0 to 100 in JetBrains Mono, fading out to reveal the site.",
+    "particles": "Use react-tsparticles for the hero background. Particles should be small dots linked by thin lines, moving very slowly to represent neural networks/data connectivity. Color should adapt to light/dark mode."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "category": "hero_headshot",
+        "description": "Professional smiling portrait of Mahi Vinod Soni",
+        "url": "https://images.pexels.com/photos/13079557/pexels-photo-13079557.jpeg"
+      },
+      {
+        "category": "project_pharmacortex",
+        "description": "Abstract AI / Data Analytics representation for PharmaCortex",
+        "url": "https://images.pexels.com/photos/17485706/pexels-photo-17485706.png"
+      },
+      {
+        "category": "project_aws_mlops",
+        "description": "Financial stock market chart representation for AWS MLOps Risk Prediction",
+        "url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg"
+      },
+      {
+        "category": "project_inter_stock",
+        "description": "Neon blue line chart abstract for Inter-Stock Dynamics project",
+        "url": "https://images.pexels.com/photos/6203470/pexels-photo-6203470.jpeg"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Build the site using pure HTML/Tailwind for the main layout to preserve the creative bento grid. Do NOT rely heavily on default Shadcn container cards, instead implement the 'cards' style specified above.",
+    "CRITICAL: Do NOT use Inter, Space Grotesk, Roboto, or generic fonts. Import 'Cabinet Grotesk', 'IBM Plex Sans', and 'JetBrains Mono' from Google Fonts or Fontshare.",
+    "CRITICAL: All interactive elements (buttons, links, form inputs, toggles, badges) MUST include a 'data-testid' attribute using kebab-case role-based naming (e.g., data-testid='hero-resume-button').",
+    "CRITICAL: Implement a Dark/Light mode toggle. The default theme is LIGHT.",
+    "CRITICAL: Use 'react-tsparticles' for the particle background in the hero section. Ensure it covers the background fully and doesn't obstruct text (z-index).",
+    "CRITICAL: Use 'framer-motion' for scroll animations, animated statistics counters, and smooth reveal transitions.",
+    "CRITICAL: For icons, use 'lucide-react' or 'react-icons' for all social and UI icons. Do not use image-based icons.",
+    "CRITICAL: Ensure proper contrasting text colors over the Ivory/Beige/Black background as per the colors mapping.",
+    "Implement a smooth scrolling experience (can use basic CSS scroll-behavior: smooth or Lenis if preferred).",
+    "Ensure the hero section displays the CTA buttons ('View Projects', 'Download Resume', 'Contact Me') prominently.",
+    "For the Footer, use the exact text: 'Designed and Developed by Mahi Soni'."
+  ]
+}
