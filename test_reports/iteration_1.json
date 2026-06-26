@@ -1,0 +1,27 @@
+{
+  "summary": "First-pass smoke testing of Mahi's portfolio. Backend /api/ smoke check returns Hello World. Full frontend coverage: hero (incl. particle canvas), CTAs scroll behavior, navbar links, all sections (About, Experience, Projects, Skills, Achievements, Contact, Footer), animated stats settle to correct values (9.32, 95, 87, 3), project filters (All/GenAI/MLOps/Analytics) filter exactly to expected cards, theme toggle adds/removes 'dark' class, mobile menu opens with nav links. 54/54 UI checks passed.",
+  "tested_scope": ["frontend", "backend", "integration"],
+  "passed": [
+    "GET /api/ returns {\"message\":\"Hello World\"} (200)",
+    "Loader fades within ~2s; site loads at REACT_APP_BACKEND_URL",
+    "Hero: name, title, tagline 'From Numbers to Narratives', intro, particle canvas, all 3 social hrefs",
+    "Hero CTA 'View Projects' smooth-scrolls projects section into view",
+    "Navbar fixed; clicking nav-link-about scrolls about section into view",
+    "Theme toggle toggles html.dark class (light->dark->light verified)",
+    "About: 3 paragraphs, 4 animated counters settle to 9.32, 95, 87, 3",
+    "Education timeline shows 2 entries",
+    "Experience shows 3 entries (Pfizer, SYBGEN, ACSE)",
+    "Projects shows 3 cards; GenAI filter -> pharmacortex only; MLOps -> aws-mlops only; Analytics -> inter-stock only; All -> 3 cards",
+    "Skills: 4 groups with python/machine-learning/aws badges present",
+    "Achievements: 2 cards + certifications-block + leadership-card with 'Operations Manager' & 'NLC Bharat'",
+    "Contact: email/linkedin/github rows + resume button",
+    "Footer text exactly 'Designed and Developed by Mahi Soni'",
+    "Mobile (390x844): nav toggle opens mobile-nav-menu with mobile-nav-link-about"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "Resume buttons link to '#' as placeholder (expected per problem statement). Social links go to placeholder URLs (not visited). Headshot is intentional initials placeholder."
+}
