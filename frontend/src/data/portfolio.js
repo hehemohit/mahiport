@@ -8,8 +8,8 @@ export const PROFILE = {
         "I have built forecasting systems, generative AI applications, and cloud-based machine learning pipelines that solve real-world business problems.",
         "I believe in turning data into stories and insights into decisions.",
     ],
-    headshot: "https://customer-assets.emergentagent.com/job_mahi-ml-studio/artifacts/0pxvs07v_ChatGPT%20Image%20Jun%2026%2C%202026%2C%2009_08_10%20PM.png",
-    resumeUrl: "https://customer-assets.emergentagent.com/job_mahi-ml-studio/artifacts/lz2gc0xm_mahivinodsoni_resume.pdf",
+    headshot: "/mahi-headshot.jpg",
+    resumeUrl: "https://drive.google.com/file/d/1uAjCVqHKb0s1bJASgUgdTlnhtF4bxGkr/view?usp=sharing",
     socials: {
         linkedin: "https://www.linkedin.com/in/mahisoni",
         github: "https://github.com/mahi-1106",
