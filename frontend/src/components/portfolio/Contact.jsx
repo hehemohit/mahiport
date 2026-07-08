@@ -79,7 +79,7 @@ export const Contact = () => {
                             <Row
                                 icon={Github}
                                 label="GitHub"
-                                value="github.com/mahisoni"
+                                value="github.com/mahi-1106"
                                 href={PROFILE.socials.github}
                                 testid="contact-github"
                             />

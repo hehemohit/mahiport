@@ -30,10 +30,13 @@ Build a modern, premium, responsive personal portfolio for Mahi Vinod Soni (Data
 - ✅ SEO meta tags, dark/light theme persistence in localStorage
 - ✅ All 54 automated UI/backend tests passing
 
+## Update (2026 — iteration 2)
+- ✅ Wired real headshot, real resume PDF, LinkedIn (/in/mahisoni), email (mahivinodsoni@gmail.com), GitHub (github.com/mahi-1106)
+- ✅ Removed animated stats section from About (per user request)
+- ✅ Added 2 projects: "The Employee Enigma" (ML clustering, category ML) & "Airplane Crash Analysis Dashboard" (Power BI, category Analytics); added ML filter
+- ✅ Re-tested: 11/11 focused frontend checks passing
+
 ## Prioritized Backlog
-- **P1** Replace headshot placeholder with real photo (asset upload)
-- **P1** Wire up actual resume PDF for download (place in `/app/frontend/public/resume.pdf`)
-- **P1** Fill real social URLs in `/app/frontend/src/data/portfolio.js` (LinkedIn / GitHub / email)
 - **P2** Add scroll progress bar at top
 - **P2** Add custom cursor & magnetic hover on CTAs
 - **P2** Add a blog/writing section
