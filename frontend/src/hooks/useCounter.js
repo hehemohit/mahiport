@@ -24,16 +24,25 @@ export const useCounter = (target, duration = 1500, start = false) => {
 export const useInView = (options = { threshold: 0.3 }) => {
     const ref = useRef(null);
     const [inView, setInView] = useState(false);
+
+    // Destructure the specific values so they can safely be used in the dependency array
+    const threshold = options.threshold;
+    const root = options.root;
+    const rootMargin = options.rootMargin;
+
     useEffect(() => {
         if (!ref.current) return;
+        
         const obs = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
                 setInView(true);
                 obs.disconnect();
             }
-        }, options);
+        }, { threshold, root, rootMargin }); // Use primitive values here
+
         obs.observe(ref.current);
         return () => obs.disconnect();
-    }, []);
+    }, [threshold, root, rootMargin]); // Safe array dependencies
+
     return [ref, inView];
 };
