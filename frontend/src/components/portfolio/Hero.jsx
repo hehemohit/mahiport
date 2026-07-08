@@ -68,6 +68,8 @@ export const Hero = ({ isDark }) => {
                         </a>
                         <a
                             href={PROFILE.resumeUrl}
+                            target="_blank"
+                            rel="noreferrer"
                             download
                             data-testid="hero-cta-resume"
                             className="inline-flex items-center gap-2 border border-brown dark:border-beige text-ink dark:text-ivory px-7 py-3.5 text-sm font-medium hover:bg-brown hover:text-ivory dark:hover:bg-beige dark:hover:text-ink transition-all duration-300"
@@ -95,16 +97,18 @@ export const Hero = ({ isDark }) => {
                         >
                             <Linkedin size={20} />
                         </a>
-                        <a
-                            href={PROFILE.socials.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            data-testid="hero-social-github"
-                            className="text-brown dark:text-beige hover:text-ink dark:hover:text-ivory transition-colors"
-                            aria-label="GitHub"
-                        >
-                            <Github size={20} />
-                        </a>
+                        {PROFILE.socials.github && (
+                            <a
+                                href={PROFILE.socials.github}
+                                target="_blank"
+                                rel="noreferrer"
+                                data-testid="hero-social-github"
+                                className="text-brown dark:text-beige hover:text-ink dark:hover:text-ivory transition-colors"
+                                aria-label="GitHub"
+                            >
+                                <Github size={20} />
+                            </a>
+                        )}
                         <a
                             href={PROFILE.socials.email}
                             data-testid="hero-social-email"
@@ -124,17 +128,20 @@ export const Hero = ({ isDark }) => {
                     >
                         <div className="absolute -inset-4 border border-brown/20 dark:border-beige/20" />
                         <div className="absolute inset-0 bg-beige dark:bg-brown/30 overflow-hidden">
-                            {/* Decorative initials avatar (replaced when user uploads photo) */}
-                            <div className="relative h-full w-full flex items-center justify-center noise-overlay">
-                                <div className="absolute inset-0 bg-gradient-to-br from-beige to-beige/60 dark:from-brown/40 dark:to-ink/60" />
-                                <span className="relative font-display text-[10rem] md:text-[12rem] font-light text-brown/40 dark:text-beige/40 leading-none select-none">
-                                    M
-                                </span>
+                            <div className="relative h-full w-full overflow-hidden noise-overlay">
+                                <img
+                                    src={PROFILE.headshot}
+                                    alt={PROFILE.name}
+                                    data-testid="hero-headshot-image"
+                                    className="absolute inset-0 h-full w-full object-cover"
+                                    loading="eager"
+                                />
+                                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent pointer-events-none" />
                                 <div className="absolute bottom-6 left-6 right-6">
-                                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brown dark:text-beige">
+                                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ivory/80">
                                         / portrait
                                     </div>
-                                    <div className="font-display text-xl text-ink dark:text-ivory">
+                                    <div className="font-display text-xl text-ivory">
                                         Mahi Vinod Soni
                                     </div>
                                 </div>

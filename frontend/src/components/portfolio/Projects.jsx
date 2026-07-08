@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { PROJECTS } from "../../data/portfolio";
 import { ArrowUpRight } from "lucide-react";
 
-const FILTERS = ["All", "GenAI", "MLOps", "Analytics"];
+const FILTERS = ["All", "GenAI", "MLOps", "ML", "Analytics"];
 
 export const Projects = () => {
     const [filter, setFilter] = useState("All");
@@ -51,17 +51,23 @@ export const Projects = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-                    {filtered.map((p, idx) => (
+                    {filtered.map((p, idx) => {
+                        const spanClasses = [
+                            "md:col-span-8",
+                            "md:col-span-4",
+                            "md:col-span-4",
+                            "md:col-span-4",
+                            "md:col-span-12",
+                        ];
+                        const spanClass =
+                            filtered.length === 1
+                                ? "md:col-span-12"
+                                : spanClasses[idx % spanClasses.length];
+                        return (
                         <article
                             key={p.id}
                             data-testid={`project-card-${p.id}`}
-                            className={`group relative overflow-hidden border border-brown/15 dark:border-beige/15 bg-beige/60 dark:bg-brown/15 hover:-translate-y-1 hover:shadow-xl transition-all duration-500 ${
-                                idx === 0
-                                    ? "md:col-span-8"
-                                    : idx === 1
-                                      ? "md:col-span-4"
-                                      : "md:col-span-6"
-                            }`}
+                            className={`group relative overflow-hidden border border-brown/15 dark:border-beige/15 bg-beige/60 dark:bg-brown/15 hover:-translate-y-1 hover:shadow-xl transition-all duration-500 ${spanClass}`}
                         >
                             <div className="relative aspect-[16/10] overflow-hidden">
                                 <img
@@ -125,7 +131,8 @@ export const Projects = () => {
                                 </div>
                             </div>
                         </article>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>

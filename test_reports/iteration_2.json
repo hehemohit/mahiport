@@ -1,0 +1,37 @@
+{
+  "summary": "Iteration 2 focused frontend re-test of Mahi portfolio updates. All 11 targeted checks PASSED. Projects section renders 5 cards by default; all 5 filter buttons present; ML filter -> employee-enigma only; Analytics -> inter-stock + airplane-crash; GenAI -> pharmacortex; MLOps -> aws-mlops; All restores 5. Hero headshot loads real image (1122x1402, complete=true) — no 'M' placeholder. About section has zero stat-* testids remaining; education-item-0 and education-item-1 still present. All hero social hrefs, contact email/linkedin/github hrefs, and hero+contact resume hrefs match spec (customer-assets ...mahivinodsoni_resume.pdf, target=_blank). Zero console errors on load; loader faded out.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "5 project cards render by default in correct order",
+    "5 filter buttons present (all/genai/mlops/ml/analytics)",
+    "project-filter-ml -> only employee-enigma",
+    "project-filter-analytics -> inter-stock + airplane-crash (2 cards)",
+    "project-filter-genai -> only pharmacortex; project-filter-mlops -> only aws-mlops; project-filter-all -> 5 cards",
+    "hero-headshot-image src = customer-assets ChatGPT_Image PNG; naturalWidth 1122; no placeholder-M element",
+    "about-section: zero data-testid starting with 'stat-'; education-item-0 & education-item-1 present",
+    "hero-social-linkedin/github/email hrefs exactly match spec",
+    "contact-email href=mailto:mahivinodsoni@gmail.com; contact-linkedin=https://www.linkedin.com/in/mahisoni; contact-github=https://github.com/mahi-1106",
+    "hero-cta-resume and contact-resume-button both href to ...mahivinodsoni_resume.pdf with target=_blank",
+    "Zero console errors / pageerrors on load; loader faded"
+  ],
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Contact section", "issues": ["GitHub row displays text 'github.com/mahisoni' but href correctly points to github.com/mahi-1106. Display label mismatch with real GitHub username — consider updating the visible label to 'github.com/mahi-1106' for consistency (non-blocking, not part of spec assertion)."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Projects.jsx spanClasses lookup by idx % 5 works for 5 cards; when a filter yields 2-4 cards, layout may look uneven (e.g., Analytics 2 cards get col-span-8 + col-span-4) — acceptable but worth noting.",
+    "Contact section shows LinkedIn/GitHub as '/in/mahisoni' and 'github.com/mahisoni' — the GitHub display label is out of sync with actual account 'mahi-1106'."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a (skipped)", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All spec assertions verified programmatically via Playwright at REACT_APP_BACKEND_URL. Only cosmetic finding: Contact GitHub row display text says 'github.com/mahisoni' while href is github.com/mahi-1106 (Contact.jsx uses socials.linkedin/github split-and-render — check the split/render logic if you want display-label parity)."
+}

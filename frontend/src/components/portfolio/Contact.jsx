@@ -48,6 +48,8 @@ export const Contact = () => {
                     </p>
                     <a
                         href={PROFILE.resumeUrl}
+                        target="_blank"
+                        rel="noreferrer"
                         download
                         data-testid="contact-resume-button"
                         className="inline-flex items-center gap-2 bg-ink text-ivory dark:bg-ivory dark:text-ink px-7 py-3.5 text-sm font-medium hover:-translate-y-1 transition-all duration-300"
@@ -69,17 +71,19 @@ export const Contact = () => {
                         <Row
                             icon={Linkedin}
                             label="LinkedIn"
-                            value="/in/mahi-soni"
+                            value="/in/mahisoni"
                             href={PROFILE.socials.linkedin}
                             testid="contact-linkedin"
                         />
-                        <Row
-                            icon={Github}
-                            label="GitHub"
-                            value="github.com/mahisoni"
-                            href={PROFILE.socials.github}
-                            testid="contact-github"
-                        />
+                        {PROFILE.socials.github && (
+                            <Row
+                                icon={Github}
+                                label="GitHub"
+                                value="github.com/mahisoni"
+                                href={PROFILE.socials.github}
+                                testid="contact-github"
+                            />
+                        )}
                     </div>
                 </div>
             </div>

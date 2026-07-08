@@ -1,30 +1,8 @@
 import { PROFILE, EDUCATION } from "../../data/portfolio";
-import { useCounter, useInView } from "../../hooks/useCounter";
-
-const Stat = ({ stat, start }) => {
-    const value = useCounter(stat.value, 1800, start);
-    const display =
-        stat.value % 1 !== 0 ? value.toFixed(2) : Math.round(value).toString();
-    return (
-        <div
-            data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, "-")}`}
-            className="border-t border-brown/20 dark:border-beige/20 pt-5"
-        >
-            <div className="font-display text-4xl md:text-5xl font-bold tracking-tighter text-ink dark:text-ivory">
-                {display}
-                <span className="font-mono text-base md:text-lg text-brown dark:text-beige ml-1">
-                    {stat.suffix}
-                </span>
-            </div>
-            <div className="mt-2 text-xs uppercase tracking-widest font-mono text-brown dark:text-beige">
-                {stat.label}
-            </div>
-        </div>
-    );
-};
+import { useInView } from "../../hooks/useCounter";
 
 export const About = () => {
-    const [ref, inView] = useInView({ threshold: 0.2 });
+    const [ref] = useInView({ threshold: 0.2 });
     return (
         <section
             id="about"
@@ -51,12 +29,6 @@ export const About = () => {
                             {p}
                         </p>
                     ))}
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
-                        {PROFILE.stats.map((s, i) => (
-                            <Stat key={i} stat={s} start={inView} />
-                        ))}
-                    </div>
 
                     <div className="pt-12">
                         <div className="font-mono text-xs uppercase tracking-[0.3em] text-brown dark:text-beige mb-6">

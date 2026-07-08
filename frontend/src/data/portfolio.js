@@ -8,20 +8,14 @@ export const PROFILE = {
         "I have built forecasting systems, generative AI applications, and cloud-based machine learning pipelines that solve real-world business problems.",
         "I believe in turning data into stories and insights into decisions.",
     ],
-    headshot: "https://customer-assets.emergentagent.com/placeholder/headshot.svg",
-    resumeUrl: "#",
+    headshot: "https://customer-assets.emergentagent.com/job_mahi-ml-studio/artifacts/0pxvs07v_ChatGPT%20Image%20Jun%2026%2C%202026%2C%2009_08_10%20PM.png",
+    resumeUrl: "https://customer-assets.emergentagent.com/job_mahi-ml-studio/artifacts/lz2gc0xm_mahivinodsoni_resume.pdf",
     socials: {
-        linkedin: "https://www.linkedin.com/",
-        github: "https://github.com/",
-        email: "mailto:mahisoni@example.com",
-        emailAddress: "mahisoni@example.com",
+        linkedin: "https://www.linkedin.com/in/mahisoni",
+        github: "https://github.com/mahi-1106",
+        email: "mailto:mahivinodsoni@gmail.com",
+        emailAddress: "mahivinodsoni@gmail.com",
     },
-    stats: [
-        { value: 9.32, suffix: "/10", label: "MSc CGPA" },
-        { value: 95, suffix: "%", label: "Eval Time Reduced" },
-        { value: 87, suffix: "%", label: "Grading Accuracy" },
-        { value: 3, suffix: "+", label: "Years of Building" },
-    ],
 };
 
 export const EDUCATION = [
@@ -119,6 +113,46 @@ export const PROJECTS = [
             "Explored relative value trading strategies.",
         ],
         image: "https://images.pexels.com/photos/6203470/pexels-photo-6203470.jpeg",
+        category: "Analytics",
+    },
+    {
+        id: "employee-enigma",
+        title: "The Employee Enigma",
+        subtitle: "Decoding Attrition with Hybrid Clustering",
+        description:
+            "End-to-end unsupervised learning pipeline that segments employees by attrition risk using a KMeans + GMM hybrid on PCA-reduced features, deployed as an interactive Streamlit dashboard for HR.",
+        tech: [
+            "Python",
+            "Scikit-learn",
+            "PCA",
+            "KMeans",
+            "GMM",
+            "Streamlit",
+            "Joblib",
+        ],
+        highlights: [
+            "Hybrid KMeans + Gaussian Mixture Model clustering pipeline.",
+            "PCA-based dimensionality reduction and cluster visualization.",
+            "Interpretable risk tiers: Most Likely to Leave → Willing to Stay.",
+            "Deployed Streamlit dashboard for real-time HR predictions.",
+        ],
+        image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+        category: "ML",
+    },
+    {
+        id: "airplane-crash",
+        title: "Airplane Crash Analysis Dashboard",
+        subtitle: "Interactive Power BI Aviation Analytics",
+        description:
+            "Interactive Power BI dashboard turning decades of unstructured airplane crash records into visual, filterable insights across countries, operators, aircraft types, and fatality trends.",
+        tech: ["Power BI", "DAX", "M Queries", "Excel", "Map Visuals"],
+        highlights: [
+            "Year-wise crash trend & geographical map analysis.",
+            "Breakdown by aircraft type, operator, and crash severity.",
+            "Survival vs. fatality rate comparisons.",
+            "Interactive slicers for year, country, and operator.",
+        ],
+        image: "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg",
         category: "Analytics",
     },
 ];
